@@ -1,0 +1,2 @@
+import{PBRMaterial as e}from"./pbr-material.js";export function isBlended(t){let n=t.material;return n instanceof e&&n.alphaMode===`BLEND`||n.opacity<1}export class DrawSorter{pool=[];active=[];sort(e,t){let n=this.active,r=0;for(let i=0;i<e.length;i++){let a=e[i];if(!isBlended(a)){e[r++]=a;continue}let o=this.pool[n.length]??={mesh:void 0,distance:0};o.mesh=a,o.distance=a.distanceSquaredTo(t.x,t.y,t.z),n.push(o)}if(n.length!==0){n.sort((e,t)=>t.distance-e.distance);for(let t of n)e[r++]=t.mesh,t.mesh=void 0;n.length=0}}}
+//# sourceMappingURL=draw-order.js.map

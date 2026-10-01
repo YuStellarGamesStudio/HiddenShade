@@ -1,0 +1,1 @@
+{"version":3,"mappings":"AAAA,MAAMA,EAAiB;;EAIvB,OAAM,SAAU,iBAAiB,EAAc,CAC7C,MAAO;;;;;;;;;;EAUPA,EAAc;EACdC,EAAM;;;;;;;EAQR,CAEA,OAAO,MAAM,YAAc;;;;;;;GAS3B,OAAM,SAAU,kBAAkB,EAAc,CAC9C,MAAO;;;;;;EAMPD,EAAc;;;EAGdC,EAAM;;CAGR,CAEA,OAAO,MAAM,kBAAoB","sources":["../../../../../packages/graphics/src/webgl-2d/shaders.ts"],"names":["nativeUniforms","source"],"file":"shaders.js"}

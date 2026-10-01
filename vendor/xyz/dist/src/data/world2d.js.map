@@ -1,0 +1,1 @@
+{"version":3,"mappings":"AAAA,OAAO,MAAM,cAAgB,OAAO,OAAO,CACzC,gBAAiB,GACjB,eAAgB,IAChB,SAAU,MACV,UAAW,MACX,cAAe,MACf,YAAa,IACb,iBAAkB,EACnB,CAAA,EAED,OAAO,MAAM,gBAAkB,OAAO,OAAO,CAC3C,WAAY,EAAI,IAChB,YAAa,GACb,mBAAoB,EACpB,mBAAoB,EACpB,SAAU,IACV,gBAAiB,KACjB,mBAAoB,GACpB,qBAAsB,EACtB,gBAAiB,IAClB,CAAA","sources":["../../../src/data/world2d.ts"],"names":[],"file":"world2d.js"}

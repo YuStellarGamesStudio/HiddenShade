@@ -1,0 +1,2 @@
+import{assetLimits as e}from"./assets.js";export const rendering2dLimits=Object.freeze({targetDimension:e.textureDimension,targetPixels:e.texturePixels,layerDepth:32,commands:65536,pathCommands:16384,coordinate:1e6,meshVertices:1e6,meshIndices:3e6,particleCapacity:65536,atlasPages:64,atlasFrames:16384,fontGlyphs:4096,fontPages:64,fontBytes:8388608,manifestEntries:4096,manifestBundles:256,filterRadius:128,filterQuality:8,resolution:8});
+//# sourceMappingURL=rendering2d.js.map

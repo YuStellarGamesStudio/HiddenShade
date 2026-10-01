@@ -1,0 +1,2 @@
+export const world2dLimits=Object.freeze({polygonVertices:32,geometryExtent:1e6,mapCells:65536,particles:16384,physicsBodies:16384,maxSubSteps:120,solverIterations:64});export const physicsDefaults=Object.freeze({fixedDelta:1/120,maxSubSteps:12,velocityIterations:8,positionIterations:3,gravityY:980,penetrationSlop:.005,positionCorrection:.6,restitutionThreshold:1,geometryEpsilon:1e-8});
+//# sourceMappingURL=world2d.js.map

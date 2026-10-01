@@ -1,0 +1,1 @@
+{"version":3,"mappings":"AAAA,OAAS,kBAAgB,8BAEzB,OAAM,MAAO,qBAAqBA,CAAQ,CACxC,YAAY,EAAiB,EAAsB,CACjD,MAAM,iBAAiBC,IAAWC,CAAO,EACzC,KAAK,KAAO,cACd,CACD","sources":["../../../../packages/core/src/errors.ts"],"names":["XYZError","message","options"],"file":"errors.js"}

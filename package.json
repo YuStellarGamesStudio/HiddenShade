@@ -1,0 +1,12 @@
+{
+  "name": "hiddenshade",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "check": "node scripts/check.js",
+    "cache": "node scripts/cache.js"
+  }
+}

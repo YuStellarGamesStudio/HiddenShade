@@ -1,6 +1,6 @@
 export const RENDER = Object.freeze({
   tileWidth: 64, tileHeight: 32, halfWidth: 32, halfHeight: 16,
-  artScale: 0.5, characterAnchor: 80 / 96,
+  artScale: 1 / 3, characterAnchor: 80 / 96,
   windowRadius: 8, terrainBudget: 450, spriteBudget: 500,
   maskWidth: 1024, maskHeight: 512, fogInterval: 0.08,
   memoryOpacity: 0.22, wallMemoryOpacity: 0.19, hideMemoryOpacity: 0.6,
@@ -18,7 +18,7 @@ export const RENDER = Object.freeze({
   hideFrame: 4, exitFrame: 5, glowFrame: 6, footFrame: 7,
   alertFrame: 8, chaseFrame: 9,
   atlasFrames: Object.freeze(Array.from({ length: 10 }, (_, i) => Object.freeze(
-    i === 0 ? { x: 0, y: 128, width: 128, height: 64 }
-      : { x: i * 128, y: 0, width: 128, height: 192 },
+    i === 0 ? { x: 0, y: 192, width: 192, height: 96 }
+      : { x: i * 192, y: 0, width: 192, height: 288 },
   ))),
 });

@@ -86,12 +86,8 @@ async function share() {
   canvas.height=RUNTIME.shareHeight*RUNTIME.shareScale;
   const ctx=canvas.getContext('2d');
   ctx.scale(RUNTIME.shareScale,RUNTIME.shareScale);
-  const image=new Image(); image.src='./assets/og.png'; await image.decode();
-  ctx.fillStyle='#071119'; ctx.fillRect(0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
-  ctx.drawImage(image,RUNTIME.shareArtStart,0,RUNTIME.shareWidth-RUNTIME.shareArtStart,RUNTIME.shareHeight,RUNTIME.shareArtStart,0,RUNTIME.shareWidth-RUNTIME.shareArtStart,RUNTIME.shareHeight);
-  const fade=ctx.createLinearGradient(0,0,RUNTIME.shareWidth,0);
-  fade.addColorStop(0,'rgba(7,17,25,.98)'); fade.addColorStop(1,'rgba(7,17,25,.20)');
-  ctx.fillStyle=fade; ctx.fillRect(0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
+  const image=new Image(); image.src='./assets/share.png'; await image.decode();
+  ctx.drawImage(image,0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
   ctx.fillStyle='#dae8e5'; ctx.font=`${RUNTIME.shareHeadingSize}px Georgia,serif`;
   ctx.fillText('HiddenShade',RUNTIME.shareTitleX,RUNTIME.shareTitleY);
   ctx.fillStyle='#bce5d7'; ctx.font=`${RUNTIME.shareFloorSize}px sans-serif`;

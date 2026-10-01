@@ -20,6 +20,10 @@ Node.js 22+：`npm start` → http://localhost:4173。`npm run check` 執行核�
 
 修改遊戲／資產後、發布前執行 `npm run cache`，重新產生內容雜湊離線清單。`?lang=zh|en|ja` 切換語言，`?renderer=auto|webgpu|webgl2|canvas2d` 選擇 backend。實測證據與裝置限制見 [ACCEPTANCE.md](./ACCEPTANCE.md)。
 
+## Artwork
+
+所有美術為分層 SVG 原始檔（`assets/*.svg`，每個精靈 64×96 單位、以 3× 輸出）。修改任一精靈後：`node scripts/art.js` 驗證並組成 `assets/atlas.svg`，再以 Chromium 將它點陣化為 `assets/atlas.png`（1920×288，透明背景），最後 `npm run cache`。`og.svg`／`share.svg`／`icon.svg` 由同一批精靈組成，並輸出 `og.png`（1200×630）、`og@2x.png`、`share.png`（2400×1260，不含文字，分享圖前景文字由遊戲即時繪製）、`icon-*.png`、`apple-touch-icon.png` 與根目錄 `favicon.ico`。
+
 ## Deployment
 
 GitHub Pages workflow 在 push 到 main 後驗證遊戲並產生離線資產清單，再發布網站。倉庫的 Pages source 需選 GitHub Actions；自訂網域為 `hiddenshade.ysgs.app`，DNS 指向 `yueyuhoshizora.github.io`。遊戲尚未 push／部署；僅先前依使用者要求推送 CNAME。正式網域、HTTPS 與實體手機安裝未驗證。

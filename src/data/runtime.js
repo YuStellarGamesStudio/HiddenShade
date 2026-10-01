@@ -14,7 +14,6 @@ export const RUNTIME = {
   shareWidth: 1200,
   shareHeight: 630,
   shareScale: 2,
-  shareArtStart: 600,
   shareTitleX: 90,
   shareTitleY: 115,
   shareFloorY: 350,

@@ -22,6 +22,7 @@
 | 存檔雙軌 | 實際 JSON 按鈕下載 748-byte fixture，重新以 file input 上傳、預覽、確認後完整還原；Base64 同樣往返還原。預覽／取消不改寫存檔，確認前備份原槽。 |
 | 遷移／錯誤／備援 | v0 floor 4 遷移後最高到達層為 4；未來版本、損毀與不合規資料拒絕。損毀主槽重開後還原備援；quota failure 時仍保留備援的第 7 層／紀錄／自訂按鍵並顯示警告，儲存恢復後可修復。 |
 | 存檔節流／pagehide | 15 次快速設定事件只寫入兩次，間隔約 1006 ms；reload/pagehide 強制保存最新值。最近樓層紀錄最多 100 筆，統計仍累計。 |
+| 美術重製 | 所有地形、角色、標記、標題圖、OG 圖、分享圖與圖示重繪為 3× 分層 SVG；auto／WebGPU／WebGL2／Canvas2D 四種 renderer 實際遊玩畫面一致、console 無錯誤；分享卡實際輸出 2400×1260（日文）。僅在 Chromium 以截圖目視檢查，未做跨瀏覽器或實體裝置比對。 |
 | auto／WebGPU／WebGL2／Canvas2D | 實際啟動、移動計時與音訊 unlock；auto 選中 WebGPU，明確 backend 三種皆可遊玩、無 console error。 |
 | 離線 | 關閉 Chromium 網路後，在未訪問過的 lang/renderer/query 網址重新載入，Canvas2D 啟動、141 筆 vendor 資源載入、OPM unlock；native ArrowRight 將玩家 (3,3) 移到 (3.2545,2.7455)，status=playing、navigator.onLine=false。 |
 | 快取更新 | 真實舊 SW/cache `953b753fa94f32e8` → `50c0be77c6965496`；新版本完成整包快取後啟用，舊 cache 刪除，升級前後 localStorage 存檔字串完全相同；沒有使用 ignoreSearch。 |

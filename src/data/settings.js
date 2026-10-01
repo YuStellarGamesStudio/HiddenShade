@@ -1,0 +1,9 @@
+export const SAVE_VERSION = 1;
+export const SAVE_KEY = 'hiddenshade.save';
+export const BACKUP_KEY = 'hiddenshade.backup';
+export const SAVE_THROTTLE_MS = 1000;
+export const RECORD_LIMIT = 100;
+export const DEFAULT_KEYS = Object.freeze({ up: 'KeyW', down: 'KeyS', left: 'KeyA', right: 'KeyD', interact: 'Space', pause: 'Escape' });
+export const DEFAULT_SETTINGS = Object.freeze({ language: 'en', music: true, sfx: true, masterVolume: 0.7, musicVolume: 0.35, sfxVolume: 0.65 });
+export const INPUT = Object.freeze({ joystickDeadzone: 0.12, joystickRadius: 38, pinchScale: 80 });
+export const UI = Object.freeze({ recordPreviewLimit: 5 });

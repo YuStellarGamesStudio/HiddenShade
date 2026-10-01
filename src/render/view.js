@@ -250,7 +250,7 @@ export async function createView(game, scene, initialState) {
     player.visible = true;
     player.position.set(x, y);
     player.zIndex = state.player.x + state.player.y + R.actorDepthBias;
-    player.opacity = state.player.hidden ? R.hiddenOpacity : state.player.emerging > 0 ? R.emergenceOpacity : 1;
+    player.opacity = state.player.emerging > 0 ? R.emergenceOpacity : state.player.hidden ? R.hiddenOpacity : 1;
     foot.visible = true;
     foot.position.set(x, y);
     foot.opacity = state.player.hidden ? R.hiddenFootOpacity : R.footprintOpacity;

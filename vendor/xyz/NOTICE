@@ -1,0 +1,13 @@
+XYZ.js v1.6.0
+Copyright YueyuHoshizora and contributors
+https://github.com/YueyuHoshizora/XYZ.js/releases/tag/v1.6
+Licensed under Apache License 2.0; see LICENSE.
+Official release archive SHA-256:
+7ef17cdf386a9fa6a2d150c8aaf80051301763def211b0ae2daf068d4b9cc0b5
+
+Includes OPM.js, an FM synthesizer by YueyuHoshizora and contributors.
+https://github.com/YueyuHoshizora/OPM.js
+Licensed under Apache License 2.0; see dist/vendor/opm/LICENSE.
+Upstream provenance is retained in dist/vendor/opm/manifest.json.
+The official archive did not supply a separate NOTICE file; this attribution
+notice supplements, and does not replace, upstream license/provenance files.

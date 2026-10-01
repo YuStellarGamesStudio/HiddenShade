@@ -7,6 +7,7 @@ import { getLanguage, setLanguage, t } from './src/systems/i18n.js';
 import { loadSave, persistSave, exportFile, encodeSave, parseSave, importSave, readBackup } from './src/systems/save.js';
 import { evaluateRating } from './src/data/game.js';
 import { RUNTIME } from './src/data/runtime.js';
+import { RECORD_LIMIT } from './src/data/settings.js';
 
 let save = loadSave();
 let game, scene, audio, input, ui;
@@ -64,6 +65,7 @@ function finish(state) {
   state.stars = stars;
   const record = {floor:save.floor,stars,elapsed:state.elapsed,detections:state.detections,hideUses:state.hideUses,at:new Date().toISOString()};
   save.records.push(record);
+  if (save.records.length > RECORD_LIMIT) save.records.splice(0,save.records.length - RECORD_LIMIT);
   save.stats.escapes++;
   save.stats.bestStars = Math.max(save.stats.bestStars,stars);
   save.floor++;
@@ -85,7 +87,8 @@ async function share() {
   const ctx=canvas.getContext('2d');
   ctx.scale(RUNTIME.shareScale,RUNTIME.shareScale);
   const image=new Image(); image.src='./assets/og.png'; await image.decode();
-  ctx.drawImage(image,0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
+  ctx.fillStyle='#071119'; ctx.fillRect(0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
+  ctx.drawImage(image,RUNTIME.shareArtStart,0,RUNTIME.shareWidth-RUNTIME.shareArtStart,RUNTIME.shareHeight,RUNTIME.shareArtStart,0,RUNTIME.shareWidth-RUNTIME.shareArtStart,RUNTIME.shareHeight);
   const fade=ctx.createLinearGradient(0,0,RUNTIME.shareWidth,0);
   fade.addColorStop(0,'rgba(7,17,25,.98)'); fade.addColorStop(1,'rgba(7,17,25,.20)');
   ctx.fillStyle=fade; ctx.fillRect(0,0,RUNTIME.shareWidth,RUNTIME.shareHeight);
@@ -94,7 +97,8 @@ async function share() {
   ctx.fillStyle='#bce5d7'; ctx.font=`${RUNTIME.shareFloorSize}px sans-serif`;
   ctx.fillText(t('shareFloor',{floor:save.stats.highestFloor}),RUNTIME.shareTitleX,RUNTIME.shareFloorY);
   ctx.fillStyle='#d8b987'; ctx.font=`${RUNTIME.shareBodySize}px sans-serif`;
-  ctx.fillText(t('shareStats',{time:Math.round(save.stats.playTime),stars:save.stats.bestStars}),RUNTIME.shareTitleX,RUNTIME.shareStatsY);
+  const time=`${Math.floor(save.stats.playTime/60)}:${String(Math.floor(save.stats.playTime)%60).padStart(2,'0')}`;
+  ctx.fillText(t('shareStats',{time,stars:save.stats.bestStars}),RUNTIME.shareTitleX,RUNTIME.shareStatsY);
   ctx.fillStyle='#9daeb8'; ctx.font=`${RUNTIME.shareFooterSize}px sans-serif`;
   ctx.fillText('hiddenshade.ysgs.app',RUNTIME.shareTitleX,RUNTIME.shareFooterY);
   const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
